@@ -230,7 +230,7 @@ reset TIMER2 TCNT2
 Input : Configuration and value to set
 output : ERROR or OK
 */
-extern EN_ERRORSTATE_t TIMER2_Reset(Str_Timer2Configuration_t *Config_t)
+extern EN_ERRORSTATE_t TIMER2_Reset()
 {
 	TCNT2 = 0;
 	return E_OK;
@@ -247,3 +247,20 @@ extern EN_ERRORSTATE_t TIMER2_Get_Ticktime(uint8_t *PTR_ticktime)
 	return E_OK;
 }
  
+ 
+ /*
+ Congif for counter interrupt no prescaler
+ Input : struct config
+ output : ERROR or OK
+ */
+ extern EN_ERRORSTATE_t TIMER2_Counter_config(Str_Timer2Configuration_t *Config_t)
+ {
+	 Config_t->Mode = COUNTER_MODE;
+	 Config_t->Ticks_Mode = NORMAL_MODE;
+	 Config_t->Timer_Psc = F_CPU_CLOCK_TIMER_2;
+	 Config_t->Interrupt_Mode = INTERRUPT;
+	 TIMER2_Reset();
+	 TIMER2_init(Config_t);
+	 TIMER2_start(Config_t,TIMER2_OVERFLOW);
+	 return E_OK;
+ }

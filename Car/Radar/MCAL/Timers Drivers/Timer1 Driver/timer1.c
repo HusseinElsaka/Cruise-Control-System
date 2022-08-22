@@ -222,7 +222,7 @@ set TIMER1 flag state
 Input : Configuration and value to set
 output : ERROR or OK
 */
-extern EN_ERRORSTATE_t TIMER1_Reset(Str_Timer1Configuration_t *Config_t)
+extern EN_ERRORSTATE_t TIMER1_Flag_Reset(Str_Timer1Configuration_t *Config_t)
 {
 	if (Config_t->Ticks_Mode == NORMAL_MODE)
 	{
@@ -244,9 +244,20 @@ get TIMER1 Ticktime
 Input : pointer to address to get into the ticktime value
 output : ERROR or OK
 */
-extern EN_ERRORSTATE_t TIMER1_Get_Ticktime(u8_t *PTR_ticktime)
+extern EN_ERRORSTATE_t TIMER1_Get_Ticktime(uint8_t *PTR_ticktime)
 {
 	*PTR_ticktime = (TCNT1H << 8) | TCNT1L;
+	return E_OK;
+}
+
+/*
+Reset TIMER1 TCNT1
+Input : Configuration
+output : ERROR or OK
+*/
+extern EN_ERRORSTATE_t TIMER1_Reset(void)
+{
+	TCNT1 = 0x0000;
 	return E_OK;
 }
 

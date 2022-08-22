@@ -1,5 +1,4 @@
 
-
 #include "Application/Application.h"
 
 
@@ -12,4 +11,3 @@ int main(void)
 		app_start();
     }
 }
-

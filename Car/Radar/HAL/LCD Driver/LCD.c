@@ -28,7 +28,7 @@ static void LCD_sendCommand(u8_t command)
 {
     DIO_setPin(LCD_RS_PORT, LCD_RS_PIN, LOW);
     DIO_setPin(LCD_RW_PORT, LCD_RW_PIN, LOW);
-    DIO_voidSetPortValue(LCD_8BITS_DATA_PORT, command);
+    DIO_setPortValue(LCD_8BITS_DATA_PORT, command);
     DIO_setPin(LCD_E_PORT, LCD_E_PIN, HIGH);
     _delay_ms(1);
     DIO_setPin(LCD_E_PORT, LCD_E_PIN, LOW);
@@ -39,7 +39,7 @@ static void LCD_writeData(u8_t data)
 {
     DIO_setPin(LCD_RS_PORT, LCD_RS_PIN, HIGH);
     DIO_setPin(LCD_RW_PORT, LCD_RW_PIN, LOW);
-    DIO_voidSetPortValue(LCD_8BITS_DATA_PORT, data);
+    DIO_setPortValue(LCD_8BITS_DATA_PORT, data);
     DIO_setPin(LCD_E_PORT, LCD_E_PIN, HIGH);
     _delay_ms(1);
     DIO_setPin(LCD_E_PORT, LCD_E_PIN, LOW);

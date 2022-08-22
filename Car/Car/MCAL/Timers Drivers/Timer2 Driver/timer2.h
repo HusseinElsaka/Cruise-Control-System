@@ -122,7 +122,7 @@ reset TIMER2 TCNT2
 Input : Configuration and value to set
 output : ERROR or OK
 */
-extern EN_ERRORSTATE_t TIMER2_Reset(Str_Timer2Configuration_t *Config_t);
+extern EN_ERRORSTATE_t TIMER2_Reset();
 
 /*
 get TIMER2 Ticktime
@@ -132,6 +132,12 @@ output : ERROR or OK
 extern EN_ERRORSTATE_t TIMER2_Get_Ticktime(uint8_t *PTR_ticktime);
 
 
+/*
+Congif for counter interrupt no prescaler
+Input : struct config
+output : ERROR or OK
+*/
+extern EN_ERRORSTATE_t TIMER2_Counter_config(Str_Timer2Configuration_t *Config_t);
 
 
 #endif /* TIMER2_H_ */
