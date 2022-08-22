@@ -58,6 +58,7 @@ void INT_VECT(void)
 #define INT_EN 7
 #define INT_FAILING 0
 #define INT_RISING 1
+#define INT_LOGIC_CHANGE 2
 
 /* Brief : Using this function to enable Interrupt
  * INTUPT : //
