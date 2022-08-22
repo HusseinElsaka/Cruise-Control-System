@@ -44,6 +44,7 @@ SUBDIRS :=  \
 ../MCAL/Timers\ Drivers/ \
 ../MCAL/Timers\ Drivers/Timer0\ Driver/ \
 ../MCAL/Timers\ Drivers/Timer1\ Driver/ \
+../MCAL/Timers\ Drivers/Timer2\ Driver/ \
 ../Utilites/
 
 
@@ -57,7 +58,8 @@ C_SRCS +=  \
 ../MCAL/DIO\ Driver/DIO.c \
 ../MCAL/Interrupt\ Driver/INTERRUPT.c \
 ../MCAL/Timers\ Drivers/Timer0\ Driver/timer0.c \
-../MCAL/Timers\ Drivers/Timer1\ Driver/timer1.c
+../MCAL/Timers\ Drivers/Timer1\ Driver/timer1.c \
+../MCAL/Timers\ Drivers/Timer2\ Driver/timer2.c
 
 
 PREPROCESSING_SRCS += 
@@ -75,7 +77,8 @@ MCAL/ADC\ Driver/adc.o \
 MCAL/DIO\ Driver/DIO.o \
 MCAL/Interrupt\ Driver/INTERRUPT.o \
 MCAL/Timers\ Drivers/Timer0\ Driver/timer0.o \
-MCAL/Timers\ Drivers/Timer1\ Driver/timer1.o
+MCAL/Timers\ Drivers/Timer1\ Driver/timer1.o \
+MCAL/Timers\ Drivers/Timer2\ Driver/timer2.o
 
 OBJS_AS_ARGS +=  \
 Application/Application.o \
@@ -86,7 +89,8 @@ main.o \
 "MCAL/DIO Driver/DIO.o" \
 "MCAL/Interrupt Driver/INTERRUPT.o" \
 "MCAL/Timers Drivers/Timer0 Driver/timer0.o" \
-"MCAL/Timers Drivers/Timer1 Driver/timer1.o"
+"MCAL/Timers Drivers/Timer1 Driver/timer1.o" \
+"MCAL/Timers Drivers/Timer2 Driver/timer2.o"
 
 C_DEPS +=  \
 Application/Application.d \
@@ -97,7 +101,8 @@ MCAL/ADC\ Driver/adc.d \
 MCAL/DIO\ Driver/DIO.d \
 MCAL/Interrupt\ Driver/INTERRUPT.d \
 MCAL/Timers\ Drivers/Timer0\ Driver/timer0.d \
-MCAL/Timers\ Drivers/Timer1\ Driver/timer1.d
+MCAL/Timers\ Drivers/Timer1\ Driver/timer1.d \
+MCAL/Timers\ Drivers/Timer2\ Driver/timer2.d
 
 C_DEPS_AS_ARGS +=  \
 Application/Application.d \
@@ -108,7 +113,8 @@ main.d \
 "MCAL/DIO Driver/DIO.d" \
 "MCAL/Interrupt Driver/INTERRUPT.d" \
 "MCAL/Timers Drivers/Timer0 Driver/timer0.d" \
-"MCAL/Timers Drivers/Timer1 Driver/timer1.d"
+"MCAL/Timers Drivers/Timer1 Driver/timer1.d" \
+"MCAL/Timers Drivers/Timer2 Driver/timer2.d"
 
 OUTPUT_FILE_PATH +=Car.elf
 
@@ -181,6 +187,13 @@ MCAL/Timers\ Drivers/Timer0\ Driver/timer0.o: ../MCAL/Timers\ Drivers/Timer0\ Dr
 	
 
 MCAL/Timers\ Drivers/Timer1\ Driver/timer1.o: ../MCAL/Timers\ Drivers/Timer1\ Driver/timer1.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 5.4.0
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\include"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega32 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\gcc\dev\atmega32" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+MCAL/Timers\ Drivers/Timer2\ Driver/timer2.o: ../MCAL/Timers\ Drivers/Timer2\ Driver/timer2.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 5.4.0
 	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\include"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega32 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\gcc\dev\atmega32" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 

@@ -16,6 +16,7 @@
 ********************************************************************************/
 #define TCNT0   (*(volatile uint8_t*) 0x52)
 #define TCCR0   (*(volatile uint8_t*) 0x53)
+#define OCR0	(*(volatile uint8_t*) 0x5C)
 #define FOC0    7
 #define WGM00   6
 #define COM01   5
@@ -131,6 +132,7 @@
  * ******************************************************************************/
 #define TCNT2   (*(volatile uint8_t*) 0x44)
 #define TCCR2   (*(volatile uint8_t*) 0x45)
+#define OCR2	(*(volatile uint8_t*) 0x43)
 #define FOC2    7
 #define WGM20   6
 #define COM21   5

@@ -164,6 +164,35 @@ Discarded input sections
  .debug_str     0x00000000      0x2b8 MCAL/Timers Drivers/Timer1 Driver/timer1.o
  .comment       0x00000000       0x31 MCAL/Timers Drivers/Timer1 Driver/timer1.o
  .debug_frame   0x00000000       0x84 MCAL/Timers Drivers/Timer1 Driver/timer1.o
+ .text          0x00000000        0x0 MCAL/Timers Drivers/Timer2 Driver/timer2.o
+ .data          0x00000000        0x0 MCAL/Timers Drivers/Timer2 Driver/timer2.o
+ .bss           0x00000000        0x0 MCAL/Timers Drivers/Timer2 Driver/timer2.o
+ .text.TIMER2_init
+                0x00000000       0xce MCAL/Timers Drivers/Timer2 Driver/timer2.o
+ .text.TIMER2_start
+                0x00000000       0xa0 MCAL/Timers Drivers/Timer2 Driver/timer2.o
+ .progmem.gcc_sw_table.TIMER2_start
+                0x00000000       0x10 MCAL/Timers Drivers/Timer2 Driver/timer2.o
+ .text.TIMER2_stop
+                0x00000000        0x8 MCAL/Timers Drivers/Timer2 Driver/timer2.o
+ .text.TIMER2_Get_FlagStatus
+                0x00000000       0x30 MCAL/Timers Drivers/Timer2 Driver/timer2.o
+ .text.TIMER2_Flag_Reset
+                0x00000000       0x24 MCAL/Timers Drivers/Timer2 Driver/timer2.o
+ .text.TIMER2_Reset
+                0x00000000        0x6 MCAL/Timers Drivers/Timer2 Driver/timer2.o
+ .text.TIMER2_Get_Ticktime
+                0x00000000        0xa MCAL/Timers Drivers/Timer2 Driver/timer2.o
+ .debug_info    0x00000000      0x250 MCAL/Timers Drivers/Timer2 Driver/timer2.o
+ .debug_abbrev  0x00000000       0xe4 MCAL/Timers Drivers/Timer2 Driver/timer2.o
+ .debug_loc     0x00000000      0x229 MCAL/Timers Drivers/Timer2 Driver/timer2.o
+ .debug_aranges
+                0x00000000       0x50 MCAL/Timers Drivers/Timer2 Driver/timer2.o
+ .debug_ranges  0x00000000       0x40 MCAL/Timers Drivers/Timer2 Driver/timer2.o
+ .debug_line    0x00000000      0x3e0 MCAL/Timers Drivers/Timer2 Driver/timer2.o
+ .debug_str     0x00000000      0x2ae MCAL/Timers Drivers/Timer2 Driver/timer2.o
+ .comment       0x00000000       0x31 MCAL/Timers Drivers/Timer2 Driver/timer2.o
+ .debug_frame   0x00000000       0x84 MCAL/Timers Drivers/Timer2 Driver/timer2.o
  .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
  .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
  .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
@@ -236,6 +265,7 @@ LOAD MCAL/DIO Driver/DIO.o
 LOAD MCAL/Interrupt Driver/INTERRUPT.o
 LOAD MCAL/Timers Drivers/Timer0 Driver/timer0.o
 LOAD MCAL/Timers Drivers/Timer1 Driver/timer1.o
+LOAD MCAL/Timers Drivers/Timer2 Driver/timer2.o
 START GROUP
 LOAD c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libm.a
 END GROUP
