@@ -4,11 +4,7 @@
 
 Application\Application.c
 
-HAL\7 Seg\7seg.c
-
 HAL\Button Driver\button.c
-
-HAL\LCD Driver\LCD.c
 
 main.c
 

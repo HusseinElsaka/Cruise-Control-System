@@ -35,11 +35,8 @@ LINKER_SCRIPT_DEP:=
 SUBDIRS :=  \
 ../Application/ \
 ../HAL/ \
-../HAL/7\ Seg/ \
-../HAL/Button\ Driver/ \
 ../HAL/LCD\ Driver/ \
 ../MCAL/ \
-../MCAL/ADC\ Driver/ \
 ../MCAL/DIO\ Driver/ \
 ../MCAL/Interrupt\ Driver/ \
 ../MCAL/Timers\ Drivers/ \
@@ -51,11 +48,8 @@ SUBDIRS :=  \
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS +=  \
 ../Application/Application.c \
-../HAL/7\ Seg/7seg.c \
-../HAL/Button\ Driver/button.c \
 ../HAL/LCD\ Driver/LCD.c \
 ../main.c \
-../MCAL/ADC\ Driver/adc.c \
 ../MCAL/DIO\ Driver/DIO.c \
 ../MCAL/Interrupt\ Driver/INTERRUPT.c \
 ../MCAL/Timers\ Drivers/Timer0\ Driver/timer0.c \
@@ -70,11 +64,8 @@ ASM_SRCS +=
 
 OBJS +=  \
 Application/Application.o \
-HAL/7\ Seg/7seg.o \
-HAL/Button\ Driver/button.o \
 HAL/LCD\ Driver/LCD.o \
 main.o \
-MCAL/ADC\ Driver/adc.o \
 MCAL/DIO\ Driver/DIO.o \
 MCAL/Interrupt\ Driver/INTERRUPT.o \
 MCAL/Timers\ Drivers/Timer0\ Driver/timer0.o \
@@ -82,11 +73,8 @@ MCAL/Timers\ Drivers/Timer1\ Driver/timer1.o
 
 OBJS_AS_ARGS +=  \
 Application/Application.o \
-"HAL/7 Seg/7seg.o" \
-"HAL/Button Driver/button.o" \
 "HAL/LCD Driver/LCD.o" \
 main.o \
-"MCAL/ADC Driver/adc.o" \
 "MCAL/DIO Driver/DIO.o" \
 "MCAL/Interrupt Driver/INTERRUPT.o" \
 "MCAL/Timers Drivers/Timer0 Driver/timer0.o" \
@@ -94,11 +82,8 @@ main.o \
 
 C_DEPS +=  \
 Application/Application.d \
-HAL/7\ Seg/7seg.d \
-HAL/Button\ Driver/button.d \
 HAL/LCD\ Driver/LCD.d \
 main.d \
-MCAL/ADC\ Driver/adc.d \
 MCAL/DIO\ Driver/DIO.d \
 MCAL/Interrupt\ Driver/INTERRUPT.d \
 MCAL/Timers\ Drivers/Timer0\ Driver/timer0.d \
@@ -106,11 +91,8 @@ MCAL/Timers\ Drivers/Timer1\ Driver/timer1.d
 
 C_DEPS_AS_ARGS +=  \
 Application/Application.d \
-"HAL/7 Seg/7seg.d" \
-"HAL/Button Driver/button.d" \
 "HAL/LCD Driver/LCD.d" \
 main.d \
-"MCAL/ADC Driver/adc.d" \
 "MCAL/DIO Driver/DIO.d" \
 "MCAL/Interrupt Driver/INTERRUPT.d" \
 "MCAL/Timers Drivers/Timer0 Driver/timer0.d" \
@@ -137,20 +119,6 @@ Application/Application.o: ../Application/Application.c
 	@echo Finished building: $<
 	
 
-HAL/7\ Seg/7seg.o: ../HAL/7\ Seg/7seg.c
-	@echo Building file: $<
-	@echo Invoking: AVR/GNU C Compiler : 5.4.0
-	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\include"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega32 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\gcc\dev\atmega32" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
-	@echo Finished building: $<
-	
-
-HAL/Button\ Driver/button.o: ../HAL/Button\ Driver/button.c
-	@echo Building file: $<
-	@echo Invoking: AVR/GNU C Compiler : 5.4.0
-	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\include"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega32 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\gcc\dev\atmega32" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
-	@echo Finished building: $<
-	
-
 HAL/LCD\ Driver/LCD.o: ../HAL/LCD\ Driver/LCD.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 5.4.0
@@ -159,13 +127,6 @@ HAL/LCD\ Driver/LCD.o: ../HAL/LCD\ Driver/LCD.c
 	
 
 ./main.o: .././main.c
-	@echo Building file: $<
-	@echo Invoking: AVR/GNU C Compiler : 5.4.0
-	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\include"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega32 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\gcc\dev\atmega32" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
-	@echo Finished building: $<
-	
-
-MCAL/ADC\ Driver/adc.o: ../MCAL/ADC\ Driver/adc.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 5.4.0
 	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\include"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega32 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\gcc\dev\atmega32" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 

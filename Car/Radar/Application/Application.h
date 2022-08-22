@@ -6,11 +6,6 @@
 #define F_CPU 8000000UL
 
 #include "../HAL/LCD Driver/LCD.h"
-#include "../MCAL/ADC Driver/adc.h"
-
-
-
-Str_Timer0Configuration_t timer0app;
 
 
 void app_init(void);

@@ -126,15 +126,6 @@
     <Compile Include="Application\Application.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="HAL\7 Seg\7seg.c">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="HAL\Button Driver\button.c">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="HAL\Button Driver\button.h">
-      <SubType>compile</SubType>
-    </Compile>
     <Compile Include="HAL\LCD Driver\LCD.c">
       <SubType>compile</SubType>
     </Compile>
@@ -145,12 +136,6 @@
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="main.c">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="MCAL\ADC Driver\adc.c">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="MCAL\ADC Driver\adc.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="MCAL\DIO Driver\DIO.c">
@@ -190,11 +175,8 @@
   <ItemGroup>
     <Folder Include="Application\" />
     <Folder Include="HAL\" />
-    <Folder Include="HAL\7 Seg\" />
-    <Folder Include="HAL\Button Driver\" />
     <Folder Include="HAL\LCD Driver\" />
     <Folder Include="MCAL\" />
-    <Folder Include="MCAL\ADC Driver\" />
     <Folder Include="MCAL\DIO Driver\" />
     <Folder Include="MCAL\Interrupt Driver\" />
     <Folder Include="MCAL\Timers Drivers\" />

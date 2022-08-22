@@ -5,13 +5,13 @@ MCAL/ADC Driver/adc.d MCAL/ADC Driver/adc.o: ../MCAL/ADC\ Driver/adc.c \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdint.h \
  ../MCAL/ADC\ Driver/../../Utilites/BitMath.h \
  ../MCAL/ADC\ Driver/../Timers\ Drivers/Timer0\ Driver/timer0.h \
- e:\self\embedded\ internship\graduation\ project\car\car\utilites\bitmath.h \
- e:\self\embedded\ internship\graduation\ project\car\car\utilites\memmap.h \
- e:\self\embedded\ internship\graduation\ project\car\car\utilites\datatypes.h \
+ ../MCAL/ADC\ Driver/../Timers\ Drivers/Timer0\ Driver/../../../Utilites/BitMath.h \
+ ../MCAL/ADC\ Driver/../Timers\ Drivers/Timer0\ Driver/../../../Utilites/Memmap.h \
+ ../MCAL/ADC\ Driver/../Timers\ Drivers/Timer0\ Driver/../../../Utilites/Datatypes.h \
  ../MCAL/ADC\ Driver/../Timers\ Drivers/Timer1\ Driver/timer1.h \
- e:\self\embedded\ internship\graduation\ project\car\car\utilites\bitmath.h \
- e:\self\embedded\ internship\graduation\ project\car\car\utilites\memmap.h \
- e:\self\embedded\ internship\graduation\ project\car\car\utilites\datatypes.h \
+ ../MCAL/ADC\ Driver/../Timers\ Drivers/Timer1\ Driver/../../../Utilites/BitMath.h \
+ ../MCAL/ADC\ Driver/../Timers\ Drivers/Timer1\ Driver/../../../Utilites/Memmap.h \
+ ../MCAL/ADC\ Driver/../Timers\ Drivers/Timer1\ Driver/../../../Utilites/Datatypes.h \
  ../MCAL/ADC\ Driver/../Interrupt\ Driver/INTERRUPT.h \
  ../MCAL/ADC\ Driver/../Interrupt\ Driver/../../Utilites/BitMath.h \
  ../MCAL/ADC\ Driver/../Interrupt\ Driver/../../Utilites/Memmap.h \
@@ -31,19 +31,19 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 
 ../MCAL/ADC\ Driver/../Timers\ Drivers/Timer0\ Driver/timer0.h:
 
-e:\self\embedded\ internship\graduation\ project\car\car\utilites\bitmath.h:
+../MCAL/ADC\ Driver/../Timers\ Drivers/Timer0\ Driver/../../../Utilites/BitMath.h:
 
-e:\self\embedded\ internship\graduation\ project\car\car\utilites\memmap.h:
+../MCAL/ADC\ Driver/../Timers\ Drivers/Timer0\ Driver/../../../Utilites/Memmap.h:
 
-e:\self\embedded\ internship\graduation\ project\car\car\utilites\datatypes.h:
+../MCAL/ADC\ Driver/../Timers\ Drivers/Timer0\ Driver/../../../Utilites/Datatypes.h:
 
 ../MCAL/ADC\ Driver/../Timers\ Drivers/Timer1\ Driver/timer1.h:
 
-e:\self\embedded\ internship\graduation\ project\car\car\utilites\bitmath.h:
+../MCAL/ADC\ Driver/../Timers\ Drivers/Timer1\ Driver/../../../Utilites/BitMath.h:
 
-e:\self\embedded\ internship\graduation\ project\car\car\utilites\memmap.h:
+../MCAL/ADC\ Driver/../Timers\ Drivers/Timer1\ Driver/../../../Utilites/Memmap.h:
 
-e:\self\embedded\ internship\graduation\ project\car\car\utilites\datatypes.h:
+../MCAL/ADC\ Driver/../Timers\ Drivers/Timer1\ Driver/../../../Utilites/Datatypes.h:
 
 ../MCAL/ADC\ Driver/../Interrupt\ Driver/INTERRUPT.h:
 
