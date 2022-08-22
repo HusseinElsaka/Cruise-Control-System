@@ -15,7 +15,7 @@ Input : void
 return ERROR or OK
 */
 
-EN_ERRORSTATE_t Ultrasonic_init(void)
+extern EN_ERRORSTATE_t Ultrasonic_init(void)
 {
 	DIO_setPinDirection(ULTRASONIC_PORT,ULTRASONIC_TRIGGER_PIN,HIGH);
 	DIO_setPinDirection(ULTRASONIC_PORT,ULTRASONIC_ECHO_PIN,LOW);
@@ -33,7 +33,7 @@ output : reading value
 return ERROR or OK
 */
 
-EN_ERRORSTATE_t Ultrasonic_getReading(void)
+extern EN_ERRORSTATE_t Ultrasonic_getReading(void)
 {
 	if(!sensor_working)
 	{
@@ -55,7 +55,7 @@ output : Speed of Car
 return ERROR or OK
 */
 
-EN_ERRORSTATE_t Ultrasonic_CarSpeed(u32_t Distance)
+extern EN_ERRORSTATE_t Ultrasonic_CarSpeed(u32_t Distance)
 {
 	if (Distance >= 80)
 	{
@@ -92,7 +92,7 @@ Input : void
 output : Distance
 return ERROR or OK
 */
-EN_ERRORSTATE_t Ultrasonic_DataSend(u8_t *Distance)
+extern EN_ERRORSTATE_t Ultrasonic_DataSend(u8_t *Distance)
 {
 	Distance = distance;
 	return E_OK;

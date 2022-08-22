@@ -4,9 +4,9 @@
 #define ULTRASONIC_H_
 
 #include "../../MCAL/DIO Driver/DIO.h"
-#include "../../MCAL/Timers Drivers/Timer2 Driver/timer2.h"
 #include "../../Utilites/BitMath.h"
 #include "../../Utilites/DataTypes.h"
+#include "../../MCAL/Timers Drivers/Timer2 Driver/timer2.h"
 #include "../../MCAL/Interrupt Driver/INTERRUPT.h"
 
 
@@ -21,7 +21,7 @@ Function to initialization the Ultrasonic
 Input : void
 return ERROR or OK
 */
-EN_ERRORSTATE_t Ultrasonic_init(void);
+extern EN_ERRORSTATE_t Ultrasonic_init(void);
 
 
 /*
@@ -30,7 +30,7 @@ Input : void
 output : reading value
 return ERROR or OK
 */
-EN_ERRORSTATE_t Ultrasonic_getReading(void);
+extern EN_ERRORSTATE_t Ultrasonic_getReading(void);
 
 
 /*
@@ -39,6 +39,15 @@ Input : void
 output : String 
 return ERROR or OK
 */
-EN_ERRORSTATE_t Ultrasonic_CarSpeed(u32_t Distance);
+extern EN_ERRORSTATE_t Ultrasonic_CarSpeed(u32_t Distance);
+
+
+/*
+Function to Return Distance to send to LCD
+Input : void
+output : Distance
+return ERROR or OK
+*/
+extern EN_ERRORSTATE_t Ultrasonic_DataSend(u8_t *Distance);
 
 #endif /* ULTRASONIC_H_ */
