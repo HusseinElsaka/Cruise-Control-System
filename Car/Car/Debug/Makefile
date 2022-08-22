@@ -36,6 +36,7 @@ SUBDIRS :=  \
 ../Application/ \
 ../HAL/ \
 ../HAL/Button\ Driver/ \
+../HAL/Ultrasonic\ Driver \
 ../MCAL/ \
 ../MCAL/ADC\ Driver/ \
 ../MCAL/DIO\ Driver/ \
@@ -50,6 +51,7 @@ SUBDIRS :=  \
 C_SRCS +=  \
 ../Application/Application.c \
 ../HAL/Button\ Driver/button.c \
+../HAL/Ultrasonic\ Driver/Ultrasonic.c \
 ../main.c \
 ../MCAL/ADC\ Driver/adc.c \
 ../MCAL/DIO\ Driver/DIO.c \
@@ -67,6 +69,7 @@ ASM_SRCS +=
 OBJS +=  \
 Application/Application.o \
 HAL/Button\ Driver/button.o \
+HAL/Ultrasonic\ Driver/Ultrasonic.o \
 main.o \
 MCAL/ADC\ Driver/adc.o \
 MCAL/DIO\ Driver/DIO.o \
@@ -77,6 +80,7 @@ MCAL/Timers\ Drivers/Timer1\ Driver/timer1.o
 OBJS_AS_ARGS +=  \
 Application/Application.o \
 "HAL/Button Driver/button.o" \
+"HAL/Ultrasonic Driver/Ultrasonic.o" \
 main.o \
 "MCAL/ADC Driver/adc.o" \
 "MCAL/DIO Driver/DIO.o" \
@@ -87,6 +91,7 @@ main.o \
 C_DEPS +=  \
 Application/Application.d \
 HAL/Button\ Driver/button.d \
+HAL/Ultrasonic\ Driver/Ultrasonic.d \
 main.d \
 MCAL/ADC\ Driver/adc.d \
 MCAL/DIO\ Driver/DIO.d \
@@ -97,6 +102,7 @@ MCAL/Timers\ Drivers/Timer1\ Driver/timer1.d
 C_DEPS_AS_ARGS +=  \
 Application/Application.d \
 "HAL/Button Driver/button.d" \
+"HAL/Ultrasonic Driver/Ultrasonic.d" \
 main.d \
 "MCAL/ADC Driver/adc.d" \
 "MCAL/DIO Driver/DIO.d" \
@@ -126,6 +132,13 @@ Application/Application.o: ../Application/Application.c
 	
 
 HAL/Button\ Driver/button.o: ../HAL/Button\ Driver/button.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 5.4.0
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\include"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega32 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\gcc\dev\atmega32" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+HAL/Ultrasonic\ Driver/Ultrasonic.o: ../HAL/Ultrasonic\ Driver/Ultrasonic.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 5.4.0
 	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\include"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega32 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\gcc\dev\atmega32" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
