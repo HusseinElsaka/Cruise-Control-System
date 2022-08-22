@@ -3,23 +3,17 @@
 u8_t flag = 0;
 
  
- 
+
+
 void app_init(void)
 {
 	/* Initialization */
-	
+	DIO_setPortDirection(PORT_A,0xFF);
+	Ultrasonic_init();
 }
 
 
 void app_start(void)
 {
-
-}
-
-
-ISR(TIMER0_OVF)
-{
-	flag ++;
-	TIMER0_Flag_Reset(&timer0app);
-	TIMER0_start(&timer0app,TIMER0_OVERFLOW);
+	Ultrasonic_getReading();
 }
