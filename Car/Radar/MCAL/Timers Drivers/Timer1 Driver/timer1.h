@@ -126,12 +126,18 @@ output : ERROR or OK
 extern EN_ERRORSTATE_t TIMER1_Get_FlagStatus(Str_Timer1Configuration_t *Config_t, u8_t *PTR_Flag);
 
 /*
-set TIMER1 flag state
-Input : Configuration 
+Reset TIMER1 flag state
+Input : Configuration
 output : ERROR or OK
 */
-extern EN_ERRORSTATE_t TIMER1_Reset(Str_Timer1Configuration_t *Config_t);
+extern EN_ERRORSTATE_t TIMER1_Flag_Reset(Str_Timer1Configuration_t *Config_t);
 
+/*
+Reset TIMER1 TCNT1
+Input : Configuration
+output : ERROR or OK
+*/
+extern EN_ERRORSTATE_t TIMER1_Reset(void);
 /*
 get TIMER1 Ticktime
 Input : pointer to address to get into the ticktime value
