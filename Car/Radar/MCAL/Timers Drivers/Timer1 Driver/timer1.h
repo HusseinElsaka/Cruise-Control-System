@@ -145,6 +145,12 @@ output : ERROR or OK
 */
 extern EN_ERRORSTATE_t TIMER1_Get_Ticktime(u8_t *PTR_ticktime);
 
+/*
+function to generate 5sec using CPU at 8M hz
+input : the timer1 config
+output : make the timer1 configuration for the 5.3.000064 = (1024/8000000)*23438 so wenn need it as CTC as set OCR = 23438
+*/
+extern EN_ERRORSTATE_t TIMER1_3secDelay(Str_Timer1Configuration_t *Config_t);
 
 
 #endif /* TIMER1_H_ */
