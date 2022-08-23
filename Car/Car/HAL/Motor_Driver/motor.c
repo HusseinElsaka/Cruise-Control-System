@@ -2,7 +2,7 @@
 
 EN_ERRORSTATE_t MOTOR_init(uint8_t motorPort, uint8_t motorPin)
 {
-	if(DIO_setPinDirection(buttonPort, buttonPin,HIGH) == 0)
+	if(DIO_setPinDirection(motorPort, motorPin,HIGH) == 0)
 	{
 		return E_OK;
 	}
@@ -11,7 +11,7 @@ EN_ERRORSTATE_t MOTOR_init(uint8_t motorPort, uint8_t motorPin)
 
 EN_ERRORSTATE_t MOTOR_read(uint8_t motorPort, uint8_t motorPin, uint8_t *value)
 {
-	*value = DIO_getPin(buttonPort, buttonPin);
+	*value = DIO_getPin(motorPort, motorPin);
 	return E_OK;
 }
 
