@@ -5,7 +5,7 @@
 
 EN_ERRORSTATE_t BUTTON_init(uint8_t buttonPort, uint8_t buttonPin)
 {
-	if(DIO_setPinDirection(buttonPort, buttonPin, HIGH) == 0)
+	if(DIO_setPinDirection(buttonPort, buttonPin, LOW) == 0)
 	{
 		return E_OK;
 	}
@@ -19,3 +19,11 @@ EN_ERRORSTATE_t BUTTON_read(uint8_t buttonPort, uint8_t buttonPin, uint8_t *valu
 }
 
 
+EN_ERRORSTATE_t BUTTON_start()
+{
+	BUTTON_init(PORT_speed,BUTTON_INC);
+	BUTTON_init(PORT_speed,BUTTON_DEC);
+	BUTTON_init(PORT_control,BUTTON_BRAIKE);
+
+	return E_OK;
+}
