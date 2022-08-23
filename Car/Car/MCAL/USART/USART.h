@@ -18,7 +18,8 @@
 
 
 void UART_init();
-void UART_TxChar( u8_t ch);
+void UART_TxChar(u8_t ch);
+void UART_SendString(char *str);
 u8_t UART_RxChar();
 
 #endif /* MCAL_USART_USART_H_ */
