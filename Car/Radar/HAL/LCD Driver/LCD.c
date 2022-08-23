@@ -1,3 +1,4 @@
+
 /**
  *
  * @file LCD.c
@@ -48,15 +49,18 @@ static void LCD_writeData(u8_t data)
 
 
 
-
-
-
-
-
 #elif (LCD_CURRENT_MODE == LCD_4BITS_MODE)
 
 void LCD_Init(void)
 {
+	DIO_setPinDirection(LCD_4BITS_PORT,LCD_4BITS_PIN1,HIGH);
+	DIO_setPinDirection(LCD_4BITS_PORT,LCD_4BITS_PIN2,HIGH);
+	DIO_setPinDirection(LCD_4BITS_PORT,LCD_4BITS_PIN3,HIGH);
+	DIO_setPinDirection(LCD_4BITS_PORT,LCD_4BITS_PIN4,HIGH);
+	DIO_setPinDirection(LCD_RS_PORT,LCD_RS_PIN,HIGH);
+	DIO_setPinDirection(LCD_RW_PORT,LCD_RW_PIN,HIGH);
+	DIO_setPinDirection(LCD_E_PORT,LCD_E_PIN,HIGH);
+	
     _delay_ms(50);
     LCD_sendCommand(LCD_COM_HOME);
     _delay_ms(1);
