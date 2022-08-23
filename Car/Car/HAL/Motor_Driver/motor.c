@@ -22,3 +22,38 @@ EN_ERRORSTATE_t MOTOR_start()
 
 	return E_OK;
 }
+
+EN_ERRORSTATE_t speed_up()
+{
+	return E_OK;
+}
+
+EN_ERRORSTATE_t speed_down()
+{
+	return E_OK;
+}
+
+EN_ERRORSTATE_t speed_down_by_5()
+{
+	return E_OK;
+}
+
+EN_ERRORSTATE_t Max_speed()
+{
+	return E_OK;
+}
+
+EN_ERRORSTATE_t Zero_speed()
+{
+	return E_OK;
+}
+
+EN_ERRORSTATE_t half_of_speed()
+{
+	return E_OK;
+}
+
+EN_ERRORSTATE_t per_75_speed()
+{
+	return E_OK;
+}
