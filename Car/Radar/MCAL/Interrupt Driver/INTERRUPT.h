@@ -43,6 +43,8 @@
 /* Timer/Counter0 Overflow */
 #define TIMER0_OVF __vector_11
 
+#define USART_RXC __vector_13
+
 #define ADC_VECT __vector_16
 
 /* Set Global Interrupt, Set the I-bit in status register to 1 */
