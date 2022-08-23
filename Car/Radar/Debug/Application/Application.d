@@ -13,7 +13,19 @@ Application/Application.d Application/Application.o: \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\inttypes.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay_basic.h \
- c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\math.h
+ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\math.h \
+ ../Application/../MCAL/USART/USART.h \
+ ../Application/../MCAL/USART/../../Utilites/BitMath.h \
+ ../Application/../MCAL/USART/../../Utilites/Memmap.h \
+ ../Application/../MCAL/USART/../../Utilites/Datatypes.h \
+ ../Application/../MCAL/Timers\ Drivers/Timer1\ Driver/timer1.h \
+ ../Application/../MCAL/Timers\ Drivers/Timer1\ Driver/../../../Utilites/BitMath.h \
+ ../Application/../MCAL/Timers\ Drivers/Timer1\ Driver/../../../Utilites/Memmap.h \
+ ../Application/../MCAL/Timers\ Drivers/Timer1\ Driver/../../../Utilites/Datatypes.h \
+ ../Application/../MCAL/Interrupt\ Driver/INTERRUPT.h \
+ ../Application/../MCAL/Interrupt\ Driver/../../Utilites/BitMath.h \
+ ../Application/../MCAL/Interrupt\ Driver/../../Utilites/Memmap.h \
+ ../Application/../MCAL/Interrupt\ Driver/../../Utilites/DataTypes.h
 
 ../Application/Application.h:
 
@@ -44,3 +56,27 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay_basic.h:
 
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\math.h:
+
+../Application/../MCAL/USART/USART.h:
+
+../Application/../MCAL/USART/../../Utilites/BitMath.h:
+
+../Application/../MCAL/USART/../../Utilites/Memmap.h:
+
+../Application/../MCAL/USART/../../Utilites/Datatypes.h:
+
+../Application/../MCAL/Timers\ Drivers/Timer1\ Driver/timer1.h:
+
+../Application/../MCAL/Timers\ Drivers/Timer1\ Driver/../../../Utilites/BitMath.h:
+
+../Application/../MCAL/Timers\ Drivers/Timer1\ Driver/../../../Utilites/Memmap.h:
+
+../Application/../MCAL/Timers\ Drivers/Timer1\ Driver/../../../Utilites/Datatypes.h:
+
+../Application/../MCAL/Interrupt\ Driver/INTERRUPT.h:
+
+../Application/../MCAL/Interrupt\ Driver/../../Utilites/BitMath.h:
+
+../Application/../MCAL/Interrupt\ Driver/../../Utilites/Memmap.h:
+
+../Application/../MCAL/Interrupt\ Driver/../../Utilites/DataTypes.h:

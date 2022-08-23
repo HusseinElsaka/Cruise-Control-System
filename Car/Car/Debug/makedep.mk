@@ -22,3 +22,5 @@ MCAL\Timers Drivers\Timer1 Driver\timer1.c
 
 MCAL\Timers Drivers\Timer2 Driver\timer2.c
 
+MCAL\USART\USART.c
+

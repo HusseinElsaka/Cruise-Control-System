@@ -6,16 +6,20 @@ Application/Application.d Application/Application.o: \
  ../Application/../HAL/Ultrasonic\ Driver/../../MCAL/DIO\ Driver/../../Utilites/DataTypes.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stdint.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdint.h \
- ../Application/../HAL/Ultrasonic\ Driver/../../Utilites/BitMath.h \
- ../Application/../HAL/Ultrasonic\ Driver/../../Utilites/DataTypes.h \
  ../Application/../HAL/Ultrasonic\ Driver/../../MCAL/Timers\ Drivers/Timer2\ Driver/timer2.h \
  e:\self\embedded\ internship\graduation\ project\carspeedcontrol\car\car\utilites\bitmath.h \
  e:\self\embedded\ internship\graduation\ project\carspeedcontrol\car\car\utilites\memmap.h \
  e:\self\embedded\ internship\graduation\ project\carspeedcontrol\car\car\utilites\datatypes.h \
+ ../Application/../HAL/Ultrasonic\ Driver/../../Utilites/BitMath.h \
+ ../Application/../HAL/Ultrasonic\ Driver/../../Utilites/DataTypes.h \
  ../Application/../HAL/Ultrasonic\ Driver/../../MCAL/Interrupt\ Driver/INTERRUPT.h \
  e:\self\embedded\ internship\graduation\ project\carspeedcontrol\car\car\utilites\bitmath.h \
  e:\self\embedded\ internship\graduation\ project\carspeedcontrol\car\car\utilites\memmap.h \
- e:\self\embedded\ internship\graduation\ project\carspeedcontrol\car\car\utilites\datatypes.h
+ e:\self\embedded\ internship\graduation\ project\carspeedcontrol\car\car\utilites\datatypes.h \
+ ../Application/../HAL/Ultrasonic\ Driver/../../MCAL/USART/USART.h \
+ ../Application/../HAL/Ultrasonic\ Driver/../../MCAL/USART/../../Utilites/BitMath.h \
+ ../Application/../HAL/Ultrasonic\ Driver/../../MCAL/USART/../../Utilites/Memmap.h \
+ ../Application/../HAL/Ultrasonic\ Driver/../../MCAL/USART/../../Utilites/Datatypes.h
 
 ../Application/Application.h:
 
@@ -31,10 +35,6 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\
 
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdint.h:
 
-../Application/../HAL/Ultrasonic\ Driver/../../Utilites/BitMath.h:
-
-../Application/../HAL/Ultrasonic\ Driver/../../Utilites/DataTypes.h:
-
 ../Application/../HAL/Ultrasonic\ Driver/../../MCAL/Timers\ Drivers/Timer2\ Driver/timer2.h:
 
 e:\self\embedded\ internship\graduation\ project\carspeedcontrol\car\car\utilites\bitmath.h:
@@ -43,6 +43,10 @@ e:\self\embedded\ internship\graduation\ project\carspeedcontrol\car\car\utilite
 
 e:\self\embedded\ internship\graduation\ project\carspeedcontrol\car\car\utilites\datatypes.h:
 
+../Application/../HAL/Ultrasonic\ Driver/../../Utilites/BitMath.h:
+
+../Application/../HAL/Ultrasonic\ Driver/../../Utilites/DataTypes.h:
+
 ../Application/../HAL/Ultrasonic\ Driver/../../MCAL/Interrupt\ Driver/INTERRUPT.h:
 
 e:\self\embedded\ internship\graduation\ project\carspeedcontrol\car\car\utilites\bitmath.h:
@@ -50,3 +54,11 @@ e:\self\embedded\ internship\graduation\ project\carspeedcontrol\car\car\utilite
 e:\self\embedded\ internship\graduation\ project\carspeedcontrol\car\car\utilites\memmap.h:
 
 e:\self\embedded\ internship\graduation\ project\carspeedcontrol\car\car\utilites\datatypes.h:
+
+../Application/../HAL/Ultrasonic\ Driver/../../MCAL/USART/USART.h:
+
+../Application/../HAL/Ultrasonic\ Driver/../../MCAL/USART/../../Utilites/BitMath.h:
+
+../Application/../HAL/Ultrasonic\ Driver/../../MCAL/USART/../../Utilites/Memmap.h:
+
+../Application/../HAL/Ultrasonic\ Driver/../../MCAL/USART/../../Utilites/Datatypes.h:
