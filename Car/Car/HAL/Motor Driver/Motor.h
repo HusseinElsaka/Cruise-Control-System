@@ -5,6 +5,7 @@
 
 #include "../../MCAL/DIO Driver/dio.h"
 #include "../../MCAL/Timers Drivers/Timer0 Driver/timer0.h"
+#include "../../MCAL/USART/USART.h"
 
 /* Motor Pins */
 #define MOTOR_A_PORT PORT_B
@@ -42,6 +43,13 @@ return ERROR or OK
 
 EN_ERRORSTATE_t Motor_Speed(u32_t Speed);
 
+/*
+Function to Send Motor Speed to LCD
+Input : Void
+return ERROR or OK
+*/
+
+EN_ERRORSTATE_t Motor_SendData(void);
 
 
 
