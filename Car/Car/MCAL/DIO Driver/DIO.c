@@ -1,4 +1,4 @@
-#include "../../Utilites/BitMath.h"
+
 #include "DIO.h"
 
 EN_ERRORSTATE_t DIO_setPin(EN_portType_t portNum, u8_t pinNum, u8_t pinValue)
@@ -103,7 +103,7 @@ EN_ERRORSTATE_t DIO_setPinDirection(EN_portType_t portNum, u8_t pinNum, u8_t pin
 
 EN_ERRORSTATE_t DIO_getPin(EN_portType_t portNum, u8_t pinNum)
 {
-    u8_t pinVal;
+    u8_t pinVal = 0;
     switch (portNum)
     {
     case PORT_A:
