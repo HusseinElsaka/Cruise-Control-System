@@ -6,14 +6,10 @@
 #define BUTTON_HIGH 1
 #define BUTTON_LOW 0
 
-#define A1 1
-#define A4 4
-#define B2 2
-
 // buttons
-#define BUTTON_INC 		A1
-#define BUTTON_DEC 		A4
-#define BUTTON_BRAIKE	B2
+#define BUTTON_INC 		PIN0
+#define BUTTON_DEC 		PIN1
+#define BUTTON_BRAIKE	PIN2
 
 // port for buttons
 #define PORT_speed 		PORT_A
