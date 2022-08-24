@@ -1,8 +1,6 @@
 #include "Ultrasonic.h"
 
 #include <util/delay.h>
-#include <stdlib.h>
-#include <string.h>
 
 
 Str_Timer2Configuration_t COUNTER2;
@@ -11,7 +9,6 @@ u8_t sensor_working=0;
 static u8_t rising_edge=0;
 u32_t timer_counter=0;
 u32_t distance;
-u8_t distance_str[10] = {0};
 
 /*
 Function to initialization the Ultrasonic pins and Timer2 and external interrupt
@@ -21,11 +18,6 @@ return ERROR or OK
 
 EN_ERRORSTATE_t Ultrasonic_init(void)
 {
-	
-	
-	// UART initialization
-	UART_init();
-	
 	
 	// Pins for Ultrasonic --
 	DIO_setPinDirection(ULTRASONIC_PORT,ULTRASONIC_TRIGGER_PIN,HIGH);
@@ -109,11 +101,6 @@ Input : void
 output : Distance
 return ERROR or OK
 */
-extern EN_ERRORSTATE_t Ultrasonic_DataSend(void)
-{
-	UART_SendString(distance_str);
-	return E_OK;
-}
 
 
 
@@ -150,12 +137,7 @@ ISR(EXT_INT_1)
 		else
 		{
 			distance=(timer_counter*256+TCNT0)/466;
-			itoa(distance,distance_str,10);
-			strcat(distance_str," Cm");
-			Ultrasonic_DataSend();
-			Ultrasonic_CarSpeed(distance);
 			_delay_ms(40);
-
 			timer_counter=0;
 			rising_edge=0;
 		}

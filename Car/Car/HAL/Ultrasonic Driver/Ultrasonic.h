@@ -8,7 +8,6 @@
 #include "../../Utilites/BitMath.h"
 #include "../../Utilites/DataTypes.h"
 #include "../../MCAL/Interrupt Driver/INTERRUPT.h"
-#include "../../MCAL/USART/USART.h"
 #include "../Motor Driver/Motor.h"
 
 #define ULTRASONIC_PORT PORT_D
@@ -16,6 +15,8 @@
 #define ULTRASONIC_ECHO_PIN PIN3
 
 #define F_CPU 8000000UL
+
+extern u32_t distance;
 
 /*
 Function to initialization the Ultrasonic
@@ -44,13 +45,6 @@ return ERROR or OK
 extern EN_ERRORSTATE_t Ultrasonic_CarSpeed(u32_t Distance);
 
 
-/*
-Function to Return Distance to send to LCD
-Input : void
-output : Distance
-return ERROR or OK
-*/
-extern EN_ERRORSTATE_t Ultrasonic_DataSend(void);
 
 
 #endif /* ULTRASONIC_H_ */
