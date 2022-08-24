@@ -132,6 +132,12 @@
     <Compile Include="HAL\Button Driver\button.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="HAL\Motor Driver\Motor.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="HAL\Motor Driver\Motor.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="HAL\Ultrasonic Driver\Ultrasonic.c">
       <SubType>compile</SubType>
     </Compile>
@@ -197,6 +203,7 @@
     <Folder Include="Application\" />
     <Folder Include="HAL\" />
     <Folder Include="HAL\Button Driver\" />
+    <Folder Include="HAL\Motor Driver" />
     <Folder Include="HAL\Ultrasonic Driver" />
     <Folder Include="MCAL\" />
     <Folder Include="MCAL\ADC Driver\" />

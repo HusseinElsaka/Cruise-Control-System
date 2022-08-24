@@ -103,7 +103,7 @@ EN_ERRORSTATE_t DIO_setPinDirection(EN_portType_t portNum, u8_t pinNum, u8_t pin
 
 EN_ERRORSTATE_t DIO_getPin(EN_portType_t portNum, u8_t pinNum)
 {
-    u8_t pinVal;
+    u8_t pinVal = 0;
     switch (portNum)
     {
     case PORT_A:

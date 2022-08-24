@@ -6,6 +6,8 @@ Application\Application.c
 
 HAL\Button Driver\button.c
 
+HAL\Motor Driver\Motor.c
+
 HAL\Ultrasonic Driver\Ultrasonic.c
 
 main.c
