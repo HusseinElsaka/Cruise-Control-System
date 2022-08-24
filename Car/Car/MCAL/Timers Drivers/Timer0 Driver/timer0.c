@@ -254,7 +254,7 @@ extern EN_ERRORSTATE_t TIMER0_SecDelay_config(Str_Timer0Configuration_t *Config_
 	Config_t->PWM_Mode = PWM_NORMAL;
 	return E_OK;
 }
-
+/* Delay Second */
 extern EN_ERRORSTATE_t TIMER0_SecDelay(Str_Timer0Configuration_t *Config_t)
 {
 	TIMER0_init(Config_t);
@@ -269,5 +269,22 @@ extern EN_ERRORSTATE_t TIMER0_SecDelay(Str_Timer0Configuration_t *Config_t)
 		TIMER0_Reset();
 		TIMER0_Flag_Reset(Config_t);
 	}	
+	return E_OK;
+}
+
+
+/*
+function to generate pwm CPU at 8M hz
+input : the timer0 config
+output : make the timer0 configuration Dute Cycle = (2*ocr/510) *100
+*/
+extern EN_ERRORSTATE_t TIMER0_PWM_init(Str_Timer0Configuration_t *Config_t)
+{
+	Config_t->Mode = TIMER_MODE;
+	Config_t->Ticks_Mode = PHASE_CORRECT_PWM_MODE;
+	Config_t->Timer_Psc = F_CPU_CLOCK_TIMER_0;
+	Config_t->Interrupt_Mode = POLLING;
+	Config_t->PWM_Mode = NON_INVERTED;
+	TIMER0_init(Config_t);
 	return E_OK;
 }

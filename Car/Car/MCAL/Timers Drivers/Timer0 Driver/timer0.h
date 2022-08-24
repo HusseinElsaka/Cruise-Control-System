@@ -138,4 +138,11 @@ extern EN_ERRORSTATE_t TIMER0_SecDelay_config(Str_Timer0Configuration_t *Config_
 
 extern EN_ERRORSTATE_t TIMER0_SecDelay(Str_Timer0Configuration_t *Config_t);
 
+/*
+function to generate pwm CPU at 8M hz
+input : the timer0 config
+output : make the timer0 configuration Dute Cycle = (2*ocr/510) *100
+*/
+extern EN_ERRORSTATE_t TIMER0_PWM_init(Str_Timer0Configuration_t *Config_t);
+
 #endif /* TIMER0_H_ */
