@@ -9,6 +9,7 @@
 #include "../../Utilites/DataTypes.h"
 #include "../../MCAL/Interrupt Driver/INTERRUPT.h"
 #include "../../MCAL/USART/USART.h"
+#include "../Motor Driver/Motor.h"
 
 #define ULTRASONIC_PORT PORT_D
 #define ULTRASONIC_TRIGGER_PIN PIN6

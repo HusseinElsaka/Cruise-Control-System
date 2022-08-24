@@ -37,7 +37,7 @@ EN_ERRORSTATE_t Ultrasonic_init(void)
 	
 	// Enable External Interrupt
 	Enable_INT1(INT_LOGIC_CHANGE);
-	
+	Motor_Init();
 	return E_OK;
 }
 
@@ -75,26 +75,29 @@ EN_ERRORSTATE_t Ultrasonic_CarSpeed(u32_t Distance)
 {
 	if (Distance >= 80)
 	{
-		//100% speed
+		// Max Speed
+		Motor_Speed(MOTOR_MAX_SPEED);
 
 	}
 	else if (Distance >= 50)
 	{
 		//75% speed
-
+		Motor_Speed(MOTOR_75_SPEED);
 	}
 	else if (Distance >= 20)
 	{
 		// 50% speed
-
+		Motor_Speed(MOTOR_50_SPEED);
 	}
 	else if (Distance >= 5)
 	{
 		// 5% speed
+		Motor_Speed(Actual_MotorSpeed - MOTOR_5_SPEED);
 	}
 	else
 	{
 		// 0% speed
+		Motor_Speed(MOTOR_STOP_SPEED);
 	}
 	return E_OK;
 }
