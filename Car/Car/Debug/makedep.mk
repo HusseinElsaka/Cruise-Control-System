@@ -8,6 +8,8 @@ HAL\Button Driver\button.c
 
 HAL\Motor Driver\Motor.c
 
+HAL\Motor_Driver\motor.c
+
 HAL\Ultrasonic Driver\Ultrasonic.c
 
 main.c
