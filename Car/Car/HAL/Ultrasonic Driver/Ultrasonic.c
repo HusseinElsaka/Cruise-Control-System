@@ -1,27 +1,43 @@
 #include "Ultrasonic.h"
 
 #include <util/delay.h>
+#include <stdlib.h>
+#include <string.h>
+
 
 Str_Timer2Configuration_t COUNTER2;
 
 u8_t sensor_working=0;
-u8_t rising_edge=0;
+static u8_t rising_edge=0;
 u32_t timer_counter=0;
 u32_t distance;
-	
+u8_t distance_str[10] = {0};
+
 /*
 Function to initialization the Ultrasonic pins and Timer2 and external interrupt
 Input : void
 return ERROR or OK
 */
 
-extern EN_ERRORSTATE_t Ultrasonic_init(void)
+EN_ERRORSTATE_t Ultrasonic_init(void)
 {
+	
+	
+	// UART initialization
+	UART_init();
+	
+	
+	// Pins for Ultrasonic --
 	DIO_setPinDirection(ULTRASONIC_PORT,ULTRASONIC_TRIGGER_PIN,HIGH);
 	DIO_setPinDirection(ULTRASONIC_PORT,ULTRASONIC_ECHO_PIN,LOW);
 	DIO_pullUp(ULTRASONIC_PORT,ULTRASONIC_ECHO_PIN);
+	
+	// Timer 2 Initial
 	TIMER2_Counter_config(&COUNTER2);
+	
+	// Enable External Interrupt
 	Enable_INT1(INT_LOGIC_CHANGE);
+	Motor_Init();
 	return E_OK;
 }
 
@@ -33,7 +49,7 @@ output : reading value
 return ERROR or OK
 */
 
-extern EN_ERRORSTATE_t Ultrasonic_getReading(void)
+EN_ERRORSTATE_t Ultrasonic_getReading(void)
 {
 	if(!sensor_working)
 	{
@@ -55,46 +71,47 @@ output : Speed of Car
 return ERROR or OK
 */
 
-extern EN_ERRORSTATE_t Ultrasonic_CarSpeed(u32_t Distance)
+EN_ERRORSTATE_t Ultrasonic_CarSpeed(u32_t Distance)
 {
 	if (Distance >= 80)
 	{
-		//100% speed
-		DIO_toglePin(PORT_A,PIN0);
+		// Max Speed
+		Motor_Speed(MOTOR_MAX_SPEED);
+
 	}
 	else if (Distance >= 50)
 	{
 		//75% speed
-		DIO_toglePin(PORT_A,PIN1);
+		Motor_Speed(MOTOR_75_SPEED);
 	}
 	else if (Distance >= 20)
 	{
 		// 50% speed
-		DIO_toglePin(PORT_A,PIN2);
+		Motor_Speed(MOTOR_50_SPEED);
 	}
 	else if (Distance >= 5)
 	{
 		// 5% speed
-		DIO_toglePin(PORT_A,PIN3);
+		Motor_Speed(Actual_MotorSpeed - MOTOR_5_SPEED);
 	}
 	else
 	{
 		// 0% speed
-		DIO_toglePin(PORT_A,PIN4);
+		Motor_Speed(MOTOR_STOP_SPEED);
 	}
 	return E_OK;
 }
 
 
 /*
-Function to Return Distance to send to LCD 
+Function to Return Distance to send to LCD
 Input : void
 output : Distance
 return ERROR or OK
 */
-extern EN_ERRORSTATE_t Ultrasonic_DataSend(u8_t *Distance)
+extern EN_ERRORSTATE_t Ultrasonic_DataSend(void)
 {
-	Distance = distance;
+	UART_SendString(distance_str);
 	return E_OK;
 }
 
@@ -107,9 +124,9 @@ Distance of Object (in cm) = (Sound velocity * TIMER Value) / 2
 Distance of Object (in cm) = (34300 * TIMER Value) / 2
 Distance of Object (in cm) = 17150  * Timer Value
 
-we have selected internal 8 MHz oscillator frequency for ATmega32, 
-with No-presale for timer frequency. 
-Then time to execute 1 instruction is 0.125 us So, 
+we have selected internal 8 MHz oscillator frequency for ATmega32,
+with No-presale for timer frequency.
+Then time to execute 1 instruction is 0.125 us So,
 timer gets incremented after 0.125 us time elapse.
 
 Distance of Object (in cm) = 17150 x (TIMER value) x 0.125 x 10^-6 cm
@@ -133,8 +150,12 @@ ISR(EXT_INT_1)
 		else
 		{
 			distance=(timer_counter*256+TCNT0)/466;
-			_delay_ms(40);
+			itoa(distance,distance_str,10);
+			strcat(distance_str," Cm");
+			Ultrasonic_DataSend();
 			Ultrasonic_CarSpeed(distance);
+			_delay_ms(40);
+
 			timer_counter=0;
 			rising_edge=0;
 		}
@@ -143,15 +164,15 @@ ISR(EXT_INT_1)
 
 ISR(TIMER2_OVF)
 {
-
 	timer_counter++;
 	if(timer_counter >730)
 	{
 		TIMER2_Reset();
 		sensor_working=0;
-		rising_edge=0;
+		//rising_edge=0;
 		timer_counter=0;
 	}
 	TIMER2_Flag_Reset(&COUNTER2);
 	TIMER2_Reset();
+	
 }

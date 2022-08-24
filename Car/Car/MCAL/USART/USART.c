@@ -10,9 +10,7 @@
 
 void UART_init()
 {
-	//Set baud rate using the UBRR register.
-	UBRRL = BAUD_PRESCALE;		/* Load lower 8-bits of the baud rate value */
-	UBRRH = (BAUD_PRESCALE >> 8);	/* Load upper 8-bits*/
+	
 
 	//Enable transmission and reception by using the UCSRB register.
 	SET_BIT(UCSRB,TXEN);//TXEN
@@ -22,7 +20,9 @@ void UART_init()
 	SET_BIT(UCSRC,UCSZ0);
 	SET_BIT(UCSRC,UCSZ1);
 
-
+	//Set baud rate using the UBRR register.
+	UBRRL = BAUD_PRESCALE;		/* Load lower 8-bits of the baud rate value */
+	UBRRH = (BAUD_PRESCALE >> 8);	/* Load upper 8-bits*/
 
 }
 

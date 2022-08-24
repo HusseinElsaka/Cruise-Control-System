@@ -3,6 +3,7 @@
 
 #include "../../Utilites/Memmap.h"
 #include "../../Utilites/DataTypes.h"
+#include "../../Utilites/BitMath.h"
 
 typedef enum {
 	PORT_A=0,

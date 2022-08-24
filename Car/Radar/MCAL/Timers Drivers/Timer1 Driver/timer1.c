@@ -262,17 +262,19 @@ extern EN_ERRORSTATE_t TIMER1_Reset(void)
 }
 
 /*
-function to generate 5sec using CPU at 1M hz
+function to generate 5sec using CPU at 8M hz
 input : the timer1 config
-output : make the timer1 configuration for the 5.000192 = (256/10000000)*19,532 so wenn need it as CTC as set OCR = 19,532
+output : make the timer1 configuration for the 5.3.000064 = (1024/8000000)*23438 so wenn need it as CTC as set OCR = 23438
 */
-extern EN_ERRORSTATE_t TIMER1_5secDelay(Str_Timer1Configuration_t *Config_t)
+extern EN_ERRORSTATE_t TIMER1_3secDelay(Str_Timer1Configuration_t *Config_t)
 {
 	Config_t->Mode = TIMER_MODE;
 	Config_t->Ticks_Mode = CTC_MODE;
-	Config_t->Timer_Psc = F_CPU_CLOCK_256_TIMER_1;
+	Config_t->Timer_Psc = F_CPU_CLOCK_1024_TIMER_1;
 	Config_t->Interrupt_Mode = INTERRUPT;
 	Config_t->PWM_Mode = PWM_NORMAL;
+	TIMER1_init(Config_t);
+	TIMER1_start(Config_t,23438);
 	return E_OK;
 }
 

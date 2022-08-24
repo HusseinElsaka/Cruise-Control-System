@@ -132,6 +132,12 @@
     <Compile Include="HAL\Button Driver\button.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="HAL\Motor Driver\Motor.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="HAL\Motor Driver\Motor.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="HAL\Ultrasonic Driver\Ultrasonic.c">
       <SubType>compile</SubType>
     </Compile>
@@ -177,6 +183,12 @@
     <Compile Include="MCAL\Timers Drivers\Timer2 Driver\timer2.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="MCAL\USART\USART.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\USART\USART.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="Utilites\BitMath.h">
       <SubType>compile</SubType>
     </Compile>
@@ -191,6 +203,7 @@
     <Folder Include="Application\" />
     <Folder Include="HAL\" />
     <Folder Include="HAL\Button Driver\" />
+    <Folder Include="HAL\Motor Driver" />
     <Folder Include="HAL\Ultrasonic Driver" />
     <Folder Include="MCAL\" />
     <Folder Include="MCAL\ADC Driver\" />
@@ -200,6 +213,7 @@
     <Folder Include="MCAL\Timers Drivers\Timer0 Driver\" />
     <Folder Include="MCAL\Timers Drivers\Timer1 Driver\" />
     <Folder Include="MCAL\Timers Drivers\Timer2 Driver\" />
+    <Folder Include="MCAL\USART\" />
     <Folder Include="Utilites\" />
   </ItemGroup>
   <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />

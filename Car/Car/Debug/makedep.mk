@@ -6,6 +6,8 @@ Application\Application.c
 
 HAL\Button Driver\button.c
 
+HAL\Motor Driver\Motor.c
+
 HAL\Ultrasonic Driver\Ultrasonic.c
 
 main.c
@@ -21,4 +23,6 @@ MCAL\Timers Drivers\Timer0 Driver\timer0.c
 MCAL\Timers Drivers\Timer1 Driver\timer1.c
 
 MCAL\Timers Drivers\Timer2 Driver\timer2.c
+
+MCAL\USART\USART.c
 
