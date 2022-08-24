@@ -9,6 +9,12 @@
 
 
 #define F_CPU 8000000UL
+
+#define FIVE_SECOND_T1		39063
+#define ONE_SECOND_T1		7813
+#define ONE_HALF_SECOND_T1	11719
+#define _50_MSEC_T1			391
+
 /* TIMER1 Bits macros */
 
 /* Timer/Counter1 Control Register A � TCCR1A */
@@ -147,5 +153,6 @@ output : ERROR or OK
 extern EN_ERRORSTATE_t TIMER1_Get_Ticktime(u8_t *PTR_ticktime);
 
 
+extern EN_ERRORSTATE_t TIMER1_5secDelay_Config(Str_Timer1Configuration_t *Config_t);
 
 #endif /* TIMER1_H_ */
