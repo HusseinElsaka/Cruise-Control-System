@@ -150,7 +150,7 @@ get TIMER1 Ticktime
 Input : pointer to address to get into the ticktime value
 output : ERROR or OK
 */
-extern EN_ERRORSTATE_t TIMER1_Get_Ticktime(u8_t *PTR_ticktime);
+extern EN_ERRORSTATE_t TIMER1_Get_Ticktime(u32_t *PTR_ticktime);
 
 
 extern EN_ERRORSTATE_t TIMER1_5secDelay_Config(Str_Timer1Configuration_t *Config_t);

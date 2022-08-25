@@ -244,7 +244,7 @@ get TIMER1 Ticktime
 Input : pointer to address to get into the ticktime value
 output : ERROR or OK
 */
-extern EN_ERRORSTATE_t TIMER1_Get_Ticktime(uint8_t *PTR_ticktime)
+extern EN_ERRORSTATE_t TIMER1_Get_Ticktime(u32_t *PTR_ticktime)
 {
 	*PTR_ticktime = (TCNT1H << 8) | TCNT1L;
 	return E_OK;
@@ -273,5 +273,6 @@ extern EN_ERRORSTATE_t TIMER1_5secDelay_Config(Str_Timer1Configuration_t *Config
 	Config_t->Timer_Psc = F_CPU_CLOCK_1024_TIMER_1;
 	Config_t->Interrupt_Mode = INTERRUPT;
 	Config_t->PWM_Mode = PWM_NORMAL;
+	TIMER1_init(Config_t);
 	return E_OK;
 }
