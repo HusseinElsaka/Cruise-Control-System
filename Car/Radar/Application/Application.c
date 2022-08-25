@@ -24,7 +24,7 @@ ISR(TIMER1_COMPA)
 {
 	LCD_sendCommand(LCD_COM_CLEAR);
 	LCD_GOTO(0,0);
-	LCD_writeString("Distance : ");
+	LCD_writeString("Speed : ");
 	LCD_GOTO(1,0);
 	for(u8_t i = 0; i < 9; i++)
 	{
