@@ -14,7 +14,21 @@ EN_ERRORSTATE_t BUTTON_init(uint8_t buttonPort, uint8_t buttonPin)
 
 EN_ERRORSTATE_t BUTTON_read(uint8_t buttonPort, uint8_t buttonPin, uint8_t *value)
 {
-	*value = DIO_getPin(buttonPort, buttonPin);
+
+	if(DIO_getPin(buttonPort, buttonPin) == HIGH)
+	{
+		_delay_ms(200);
+		if(DIO_getPin(buttonPort, buttonPin) == HIGH)
+		{
+			*value = HIGH;
+			return E_OK;
+		}
+		else
+		{
+			*value = LOW;
+			return E_ERROR;
+		}
+	}
 	return E_OK;
 }
 

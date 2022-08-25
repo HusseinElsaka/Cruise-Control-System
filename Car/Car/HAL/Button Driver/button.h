@@ -2,6 +2,7 @@
 #define BUTTON_H_
 
 #include "../../MCAL/DIO Driver/dio.h"
+#include <util/delay.h>
 
 #define BUTTON_HIGH 1
 #define BUTTON_LOW 0
