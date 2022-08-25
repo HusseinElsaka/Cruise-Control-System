@@ -29,20 +29,45 @@ return ERROR or OK
 
 EN_ERRORSTATE_t Motor_Speed(u32_t Speed)
 {
-	if (Speed >= MOTOR_MAX_SPEED)
+	if((signed long)Speed < 0)
 	{
-		Actual_MotorSpeed = MOTOR_MAX_SPEED;
-	}
-	else if (Speed < MOTOR_START_SPEED)
-	{
+		Actual_MotorSpeed = MOTOR_START_SPEED;
 	}
 	else
 	{
-		Actual_MotorSpeed = Speed;
+		if (Speed >= MOTOR_MAX_SPEED)
+		{
+			Actual_MotorSpeed = MOTOR_MAX_SPEED;
+		}
+		else if (Speed < MOTOR_START_SPEED)
+		{
+			if(Actual_MotorSpeed > MOTOR_START_SPEED)
+			Actual_MotorSpeed = MOTOR_START_SPEED;
+		}
+		else
+		{
+			Actual_MotorSpeed = Speed;
+		}
 	}
-	TIMER0_start(&Timer0App,Actual_MotorSpeed);
+	
+	TIMER0_start(&Timer0App,((Actual_MotorSpeed*255) / 100));
 	return E_OK;
 }
+
+
+/*
+Function to Give the OCR0 the 0 to MOTOR
+Input : The Speed to motor
+return ERROR or OK
+*/
+
+EN_ERRORSTATE_t Motor_Stop(void)
+{
+	TIMER0_start(&Timer0App,((MOTOR_STOP_SPEED*255) / 100));
+	Actual_MotorSpeed = 0;
+	return E_OK;
+}
+
 
 /*
 Function to Send Motor Speed to LCD
