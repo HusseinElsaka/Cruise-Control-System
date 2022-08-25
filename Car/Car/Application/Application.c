@@ -18,31 +18,37 @@ void app_start(void)
 {
 	if (current_mode == BRAIKE_MODE)
 	{
-		u8_t tickTime;
+		u32_t tickTime;
 		TIMER1_Get_Ticktime(&tickTime);
 		if(BRAIKE_MODE_button >= 2 && tickTime < ONE_SECOND_T1)
 		{
-			current_mode = CONTROL_ULTRA_SONIC_MODE;
 			Motor_Speed(MOTOR_START_SPEED);
+			current_mode = CONTROL_ULTRA_SONIC_MODE;
+			TIMER1_stop();
 			BRAIKE_MODE_button = 0;
 		}
 		else if(tickTime > ONE_SECOND_T1)
 		{
 			BRAIKE_MODE_button = 0;
-			TIMER1_start(&Timer1App,FIVE_SECOND_T1);
 		}
+	}
+	else if (current_mode == CONTROL_DECREMENT_MODE || current_mode == CONTROL_INCREMENT_MODE)
+	{
+		Button_check();
 	}
 	else
 	{
-			Button_check();
-			Motor_SendData();
-			Ultrasonic_getReading();
+		Button_check();
+		Ultrasonic_getReading();
+		Ultrasonic_CarSpeed(distance);
 	}
+	Motor_SendData();
 }
 
 void Button_check(void)
 {
-	u8_t dec_read = LOW,inc_read = LOW,tickTime = 0;
+	u8_t dec_read = LOW,inc_read = LOW;
+	u32_t tickTime = 0;
 	TIMER1_Get_Ticktime(&tickTime);
 	BUTTON_read(PORT_speed,BUTTON_INC,&inc_read);
 	BUTTON_read(PORT_speed,BUTTON_DEC,&dec_read);
@@ -72,9 +78,9 @@ ISR(TIMER1_COMPA)
 	if(current_mode != BRAIKE_MODE)
 	{
 		current_mode = CONTROL_ULTRA_SONIC_MODE;
-		Ultrasonic_CarSpeed(distance);
 	}
 	TIMER1_Flag_Reset(&Timer1App);
+	TIMER1_Reset();
 	TIMER1_stop();
 }
 
@@ -83,6 +89,9 @@ ISR(EXT_INT_2)
 	current_mode = BRAIKE_MODE;
 	Motor_Speed(Actual_MotorSpeed - MOTOR_DECREASE_SPEED);
 	if (BRAIKE_MODE_button == 0)
+	{
 		TIMER1_start(&Timer1App,FIVE_SECOND_T1);
+		TIMER1_Reset();
+	}
 	BRAIKE_MODE_button ++;
 }
