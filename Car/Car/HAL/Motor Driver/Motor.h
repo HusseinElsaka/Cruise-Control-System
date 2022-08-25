@@ -15,13 +15,13 @@
 
 /* Motor Speeds */
 #define MOTOR_STOP_SPEED 0
-#define MOTOR_START_SPEED 26
-#define MOTOR_5_SPEED 13
-#define MOTOR_50_SPEED 128
-#define MOTOR_75_SPEED 192
-#define MOTOR_INCREASE_SPEED 64
-#define MOTOR_DECREASE_SPEED 64	
-#define MOTOR_MAX_SPEED 255
+#define MOTOR_START_SPEED 10
+#define MOTOR_5_SPEED 5
+#define MOTOR_50_SPEED 50
+#define MOTOR_75_SPEED 75
+#define MOTOR_INCREASE_SPEED 25
+#define MOTOR_DECREASE_SPEED 25	
+#define MOTOR_MAX_SPEED 100
 
 
 extern u32_t Actual_MotorSpeed;
@@ -52,5 +52,12 @@ return ERROR or OK
 EN_ERRORSTATE_t Motor_SendData(void);
 
 
+/*
+Function to Give the OCR0 the 0 to MOTOR
+Input : The Speed to motor
+return ERROR or OK
+*/
+
+EN_ERRORSTATE_t Motor_Stop(void);
 
 #endif /* MOTOR_H_ */
