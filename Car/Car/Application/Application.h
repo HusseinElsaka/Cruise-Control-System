@@ -13,6 +13,7 @@
 #define CONTROL_INCREMENT_MODE	 1
 #define CONTROL_DECREMENT_MODE	 2
 #define CONTROL_ULTRA_SONIC_MODE 3
+#define INITIALIZATION_MODE		 4
 
 extern u8_t current_mode;
 Str_Timer1Configuration_t Timer1App;

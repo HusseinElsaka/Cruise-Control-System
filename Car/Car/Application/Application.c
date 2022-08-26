@@ -1,7 +1,6 @@
 #include "Application.h"
 
-u8_t current_mode = CONTROL_ULTRA_SONIC_MODE;
-
+u8_t current_mode = INITIALIZATION_MODE;
 u8_t BRAIKE_MODE_button = 0;
 
 void app_init(void)
@@ -11,6 +10,13 @@ void app_init(void)
 	TIMER1_5secDelay_Config(&Timer1App);
 	Enable_INT2(INT_RISING);
 	sei();
+	u8_t readingInitButton = LOW;
+	while (readingInitButton == LOW)
+	{
+		BUTTON_read(PORT_speed,BUTTON_START,&readingInitButton);
+	}
+	current_mode = CONTROL_ULTRA_SONIC_MODE;
+	Motor_Speed(Actual_MotorSpeed);
 }
 
 
@@ -22,7 +28,6 @@ void app_start(void)
 		TIMER1_Get_Ticktime(&tickTime);
 		if(BRAIKE_MODE_button >= 2 && tickTime < ONE_SECOND_T1)
 		{
-			Motor_Speed(MOTOR_START_SPEED);
 			current_mode = CONTROL_ULTRA_SONIC_MODE;
 			TIMER1_stop();
 			BRAIKE_MODE_button = 0;
@@ -86,12 +91,15 @@ ISR(TIMER1_COMPA)
 
 ISR(EXT_INT_2)
 {
-	current_mode = BRAIKE_MODE;
-	Motor_Speed(Actual_MotorSpeed - MOTOR_DECREASE_SPEED);
-	if (BRAIKE_MODE_button == 0)
+	if(current_mode != INITIALIZATION_MODE)
 	{
-		TIMER1_start(&Timer1App,FIVE_SECOND_T1);
-		TIMER1_Reset();
+		current_mode = BRAIKE_MODE;
+		Motor_Speed(Actual_MotorSpeed - MOTOR_DECREASE_SPEED);
+		if (BRAIKE_MODE_button == 0)
+		{
+			TIMER1_start(&Timer1App,FIVE_SECOND_T1);
+			TIMER1_Reset();
+		}
+		BRAIKE_MODE_button ++;
 	}
-	BRAIKE_MODE_button ++;
 }
