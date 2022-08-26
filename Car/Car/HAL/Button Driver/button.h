@@ -11,6 +11,7 @@
 #define BUTTON_INC 		PIN0
 #define BUTTON_DEC 		PIN1
 #define BUTTON_BRAIKE	PIN2
+#define BUTTON_START	PIN2
 
 // port for buttons
 #define PORT_speed 		PORT_A

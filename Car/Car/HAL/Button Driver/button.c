@@ -37,8 +37,9 @@ EN_ERRORSTATE_t BUTTON_start()
 {
 	BUTTON_init(PORT_speed,BUTTON_INC);
 	BUTTON_init(PORT_speed,BUTTON_DEC);
+	BUTTON_init(PORT_speed,BUTTON_START);
 	BUTTON_init(PORT_control,BUTTON_BRAIKE);
-
+	
 	return E_OK;
 }
 
