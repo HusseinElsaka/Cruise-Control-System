@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-u32_t Actual_MotorSpeed = MOTOR_START_SPEED;
+u32_t Actual_MotorSpeed;
 /*
 Function to Initialization MOTOR Pins
 Input : void
@@ -18,6 +18,7 @@ EN_ERRORSTATE_t Motor_Init(void)
 	DIO_setPinDirection(MOTOR_A_PORT,MOTOR_A_PIN,HIGH);
 	DIO_setPinDirection(MOTOR_B_PORT,MOTOR_B_PIN,HIGH);
 	TIMER0_PWM_init(&Timer0App);
+	Actual_MotorSpeed = MOTOR_START_SPEED;
 	return E_OK;
 }
 
