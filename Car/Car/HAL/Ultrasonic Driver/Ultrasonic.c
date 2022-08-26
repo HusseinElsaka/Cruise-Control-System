@@ -8,7 +8,7 @@ Str_Timer2Configuration_t COUNTER2;
 u8_t sensor_working=0;
 static u8_t rising_edge=0;
 u32_t timer_counter=0;
-u32_t distance;
+u32_t distance = 120;
 
 /*
 Function to initialization the Ultrasonic pins and Timer2 and external interrupt
@@ -66,22 +66,25 @@ return ERROR or OK
 
 EN_ERRORSTATE_t Ultrasonic_CarSpeed(u32_t Distance)
 {
-	if (Distance >= 80)
+	if (Distance >= 85)
 	{
-		// Max Speed
+		Motor_Speed(Actual_MotorSpeed);
+	}
+	else if(Distance >= 80 && Distance <85)
+	{
 		Motor_Speed(MOTOR_MAX_SPEED);
 	}
-	else if (Distance >= 50)
+	else if (Distance >= 50 && Distance <80)
 	{
 		//75% speed
 		Motor_Speed(MOTOR_75_SPEED);
 	}
-	else if (Distance >= 20)
+	else if (Distance >= 20 && Distance <50)
 	{
 		// 50% speed
 		Motor_Speed(MOTOR_50_SPEED);
 	}
-	else if (Distance >= 5)
+	else if (Distance >= 5 && Distance < 20)
 	{
 		// 5% speed
 		Motor_Speed(Actual_MotorSpeed - MOTOR_5_SPEED);
@@ -151,7 +154,7 @@ ISR(TIMER2_OVF)
 	{
 		TIMER2_Reset();
 		sensor_working=0;
-		//rising_edge=0;
+		rising_edge=0;
 		timer_counter=0;
 	}
 	TIMER2_Flag_Reset(&COUNTER2);
