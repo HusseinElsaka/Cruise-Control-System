@@ -63,6 +63,7 @@ void Button_check(void)
 		{
 			current_mode = CONTROL_INCREMENT_MODE;
 			TIMER1_start(&Timer1App,FIVE_SECOND_T1);
+			TIMER1_Reset();
 			Motor_Speed(Actual_MotorSpeed + MOTOR_INCREASE_SPEED);
 		}
 	}
@@ -72,6 +73,7 @@ void Button_check(void)
 		{
 			current_mode = CONTROL_DECREMENT_MODE;
 			TIMER1_start(&Timer1App,FIVE_SECOND_T1);
+			TIMER1_Reset();
 			Motor_Speed(Actual_MotorSpeed - MOTOR_DECREASE_SPEED);
 		}
 	}
