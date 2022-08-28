@@ -26,3 +26,11 @@ If the decrement or the increment button is pressed. The ultrasonic feature canâ
 ### Communication Feature:
 Once there is a new value is received by the Manin ECU for the speed. The partner ECU shall display the new value on the LCD. 
 Communication between two ECUâ€™s is based on UART Protcole
+
+## Hardware Used
+1. 2 MCU "ATMEGA32"
+2. 4 Push Buttons
+3. Motor
+4. LCD
+5. Ultrasonic
+![https://github.com/HusseinElsaka/Cruise-Control-System/blob/main/Hardware/Finall%20Circuiy.png]
